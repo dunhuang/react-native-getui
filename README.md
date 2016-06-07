@@ -9,15 +9,18 @@ This is a react native demo for getui android
 - 在build.gradle(project:…)里增加getui的Maven库地址
 
 ```
-//个推地址 maven {     url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/" }
+//个推地址 
+maven {
+     url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/" 
+     }
 ```
 
 - 在build.gradle(Module:app)里增加
 
 ```
 dependences:{
-…,
-compile 'com.getui:sdk:2.8.1.0' compile 'com.getui:ext:2.0.3'
+   …,
+   compile 'com.getui:sdk:2.8.1.0'    compile 'com.getui:ext:2.0.3'
 }
 ```
 
@@ -35,14 +38,15 @@ manifestPlaceholders = [
 - js的实现
 
 ```    
-//透传消息监听
-    this.pushreceivedListener=DeviceEventEmitter.addListener('pushreceived', ...);
+//透传消息监听：事件名pushreceived, 消息内容通过获取事件参数payload属性即可
+ this.pushreceivedListener=DeviceEventEmitter.addListener('pushreceived', ...);
 
-//cid注册监听
-    this.getclientidListener=DeviceEventEmitter.addListener('getclientid', ...);
+//cid注册监听：事件名getclientid, clientid通过获取时间参数的clientid属性即可
+ this.getclientidListener=DeviceEventEmitter.addListener('getclientid', ...);
    ```
   
 ## Contact 联系
+
 shiyh2012@foxmail.com
 
 qq: 573329
