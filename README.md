@@ -5,7 +5,7 @@ This is a react native demo for getui android
 
 第一次写java，写的太简单，等我有空学深入了再改成插件~~
 
-### Steps  步骤
+### Start 
 - 在build.gradle(project:…)里增加getui的Maven库地址
 
 ```
@@ -35,7 +35,20 @@ manifestPlaceholders = [
 ]
 ```
 
-- js的实现
+### Java
+在MainActivity里增加new RNPushPackage(this)
+
+```
+    @Override
+    protected List<ReactPackage> getPackages() {
+        return Arrays.<ReactPackage>asList(
+                new MainReactPackage(),
+                new RNPushPackage(this) //<==add this line
+        );
+    }
+```
+
+### JS
 
 ```    
 //透传消息监听：事件名pushreceived, 消息内容通过获取事件参数payload属性即可
