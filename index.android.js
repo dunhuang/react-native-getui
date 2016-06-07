@@ -35,7 +35,9 @@ class getuiexample extends Component {
   }
   componentDidMount() {
     let that = this;
+    //收到透传消息监听
     this.pushreceivedListener=DeviceEventEmitter.addListener('pushreceived', (e) => that.onPushReceived(e));
+    //收到cid注册监听
     this.getclientidListener=DeviceEventEmitter.addListener('getclientid', (e) => that.onGetClientId(e));
   }
   componentWillUnMount (){
